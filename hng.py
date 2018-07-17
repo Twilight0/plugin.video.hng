@@ -20,7 +20,8 @@
 
 import json
 from base64 import b64decode
-from resources.lib import directory, url, action, youtube, cache, control, bookmarks, syshandle, sysaddon
+from tulip import directory, youtube, cache, control, bookmarks
+from resources.lib import sysaddon, syshandle, action, url
 
 main_id = 'UCdiTNAd8yrUcRaOEotk6oww'
 ost = 'PLZF-_NNdxpb4FKRLZ7Z_VTe4ii_ObKyoC'
@@ -28,7 +29,7 @@ key = b64decode('QUl6YVN5QThrMU95TEdmMDNIQk5sMGJ5RDUxMWpyOWNGV28yR1I0')  # pleas
 
 
 def item_list(id=main_id):
-    return youtube.youtube(key=key).videos(id)
+    return youtube.youtube(key=key).videos(id, limit=10)
 
 
 def _playlists(id=main_id):
@@ -102,9 +103,9 @@ def playlists():
     directory.add(_list)
 
 
-def _youtube(plink):
+def _youtube(pid):
 
-    _list = cache.get(youtube.youtube(key=key).playlist, 12, plink)
+    _list = cache.get(youtube.youtube(key=key).playlist, 12, pid)
 
     if _list is None:
         return
@@ -212,7 +213,9 @@ def main():
 
     directory.add(menu)
 
+
 ########################################################################################################################
+
 
 if action is None:
 
