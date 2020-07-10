@@ -1,3 +1,8 @@
+09-07-2020 - [B]2.0.0[/B]
+- Updated youtube api keys
+- Rework of the addon and python 3 capability added
+- Updated main artwork
+
 17-07-2018 - [B]1.2.0[/B]
 - Utilize tulip libraries instead of local copies
 - Bumped dependencies

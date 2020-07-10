@@ -20,8 +20,4 @@
 
 import sys, urlparse
 
-sysaddon = sys.argv[0]
-syshandle = int(sys.argv[1])
-params = dict(urlparse.parse_qsl(sys.argv[2][1:]))
-action = params.get('action')
-url = params.get('url')
+
