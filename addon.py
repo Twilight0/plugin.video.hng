@@ -76,7 +76,7 @@ elif action == 'settings':
 
 elif action == 'cache_clear':
 
-    if control.yesnoDialog(line1=control.lang(30009), line2='', line3=''):
+    if control.yesnoDialog(line1=control.lang(30009)):
 
         control.deleteFile(control.cacheFile)
         control.infoDialog(control.lang(30010))
